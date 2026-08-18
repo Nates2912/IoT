@@ -17,8 +17,11 @@ elif operacao == "*":
     print(f"Multiplicação: {multiplicacao}")
     
 elif operacao == "/":
-    divisao = numero1/numero2
-    print(f"Divisão: {divisao}")
+    if numero2 == 0:
+        print("Divisão por 0 não conta não.")
+    else:
+        divisao = numero1/numero2
+        print(f"Divisão: {divisao}")
     
 else:
     print("Operador inválido.")
