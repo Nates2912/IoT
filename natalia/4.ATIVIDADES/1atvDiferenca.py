@@ -8,7 +8,7 @@ neg = []
 
 print ("========MENU=======\nInforme os numeros.\n===================")
 
-for i in range (10):
+for i in range (4):
     numeros = float(input(f"Informe o {i+1}º número: "))
     
     if numeros > 0:
@@ -19,6 +19,6 @@ for i in range (10):
         num.append(numeros)
 
 
-print (f"|==========RESULTADOS==========|\n|A soma dos positivos é: {sum(pos)}   |\n|Os números negativos são: {len(neg)}   |\n|==============================|")
+print (f"|==========RESULTADOS==========|\n|A soma dos positivos é: {sum(pos)}   |\n|Os números negativos são: {neg}   |\n|A quantidade de positivos são: {len(pos)}   |\n|A quantidade de negativos são: {len(neg)}   |\n|==============================|")
 
         
