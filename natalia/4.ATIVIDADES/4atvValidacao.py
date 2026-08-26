@@ -10,10 +10,12 @@
 # • Quando a senha for válida, exibir "Senha cadastrada com sucesso".
 # Dica: Use while e a função len() para verificar o comprimento.
 
+import os,time
+
 print ("======CADASTRO======\n|Cadastre a sua senha|\n====================")
 
 
-while True: 
+while True:
     senha = input ("Digite uma senha de 4 dígitos númericos: ")
     
     if len(senha) == 4 and senha.isdigit():
@@ -24,4 +26,5 @@ while True:
         break
     else:
         print("Erro! Tente denovo.")
-    
+        time.sleep(3)
+        os.system('cls' or 'clear')

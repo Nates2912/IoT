@@ -9,11 +9,14 @@
 
 notaAluno = []
 
-for i in range (4):
+print ("===========MENU===========\nInsira as notas dos alunos.\n==========================")
+
+for i in range (8):
     notas = float(input(f"Nota do {i+1}º aluno(a): "))
     notaAluno.append(notas)
     
 media = sum(notaAluno) /len(notaAluno)
+print ("====RESULTADOS====")
 print (f"MEDIA DA TURMA: {media}")
 
 notaDestaques = []
