@@ -9,17 +9,20 @@ def calcular():
     n2 = float(nota2.get())
     n3 = float(nota3.get())
 
-    media = (n1+n2+n3)/3
+    try:
+        media = (n1+n2+n3)/3
+        if media >= 5:
+            situacao = 'APROVADO!'
+        else:
+            situacao = 'REPROVADO.'
 
-    if media >= 5:
-        situacao = 'APROVADO!'
-    else:
-        situacao = 'REPROVADO.'
-        
+        resultado.configure(text=f'Sua média é: {media:.1f}\nVocê foi {situacao}')
+        # resultado.configure(text=f'Sua média é: {media:.1f}\nVocê foi {situacao}, text color='green'')
+    except:
+        resultado.configure(text='Preencha os campos!')
     
-    resultado.configure(text=f'Sua média é: {media:.1f}\nVocê foi {situacao}')
-
-janela = ctk.CTk()
+    
+janela = ctk.CTk("#383327")
 
 janela.geometry('600x450')
 janela.resizable(False,False)
@@ -65,6 +68,7 @@ botao = ctk.CTkButton(janela,
                     text_color='black',
                     cursor='hand2',
                     font=('arial',15),
+                    hover_color="#c2ac49",
                     command=calcular)
 botao.pack(pady=15)
 
