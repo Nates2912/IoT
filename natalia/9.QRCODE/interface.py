@@ -10,6 +10,19 @@ janela.resizable(False,False)
 
 imagem_qr = None
 
+def gerar_qrcode():
+    global imagem_qr
+    # trazendo variavel para dentro
+    texto = entrada.get()
+    
+    if(texto!=''):
+        qr = qrcode.make(texto)
+        qr = qr.resize((300,300))
+        imagem_qr = ImageTk.PhotoImage(qr)
+        resultado.configure(image=imagem_qr,text='')
+    else:
+        resultado.configure(text='Preencha o campo!')
+
 
 titulo = ctk.CTkLabel(janela,
                     text='Sistema Gerador de QRCODE',
@@ -30,10 +43,11 @@ botao = ctk.CTkButton(janela,
                     height=40,
                     fg_color='black',
                     text='Gerar QR CODE',
-                    font=('Arial',30),
+                    font=('Arial',20),
                     text_color='white',
                     hover_color='navy',
-                    cursor='hand2')
+                    cursor='hand2',
+                    command=gerar_qrcode)
 botao.pack(pady=10)
 
 resultado = ctk.CTkLabel(janela,
